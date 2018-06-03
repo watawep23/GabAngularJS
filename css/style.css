@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800');
+
+html, body, *{
+	padding:0;
+	margin:0;
+	font-family: 'Dosis', sans-serif;
+}
+input[type="submit"]{
+	border:0;
+	outline:0;
+	padding:5px 15px;
+	font-size:16px;
+	background-color:#2d5279;
+	color:#fff;
+	font-weight:bold;
+	cursor: pointer;
+}
+input[type="submit"]:disabled{
+	background-color:#ccc !important;
+	cursor:default;
+}
+input[type="submit"]:hover{
+	background-color:#507cab;
+}
+input[type="text"],
+input[type="email"]{
+	padding:5px;
+	font-size:16px;
+	border:1px solid #ccc;
+	outline:0;
+	width:200px;
+	border-radius:5px;
+}
+.head-banner{
+	height:auto;
+	min-height:100px;
+	background-color:#ccc;
+	padding:30px 60px;
+}
+.head-banner h1,
+.head-banner p {
+	text-transform:uppercase;
+	font-size:45px;
+	font-weight:700;
+	letter-spacing:3px;
+	color:#2d5279;
+	margin-top:20px;
+}
+.head-banner p{
+	margin:0;
+	font-size:16px;
+	font-weight:600;
+	margin-bottom:30px;
+}
+.nav{
+	border:1px solid #2d5279;
+	display:inline-block;
+	border-radius:5px;
+}
+.nav > .nav-list{
+	display:inline-block;
+	border-right:1px solid #fff;
+	background-color:#2d5279;
+}
+.nav > .nav-list:last-child{
+	border-right:0;
+}
+.nav > .nav-list > a{
+	text-decoration:none;
+	display:block;
+	line-height:30px;
+	font-size:12px;
+	padding:0 20px;
+	text-transform:uppercase;
+	color:#fff;
+}
+.main-view{
+	padding:30px 60px;
+}
+
+/*Person form*/
+.person-form{
+	font-size:16px;
+	font-weight:600;
+	display:inline-block;
+}
+.person-form > label{
+	display:block;
+	margin-bottom:10px;
+}
+.error-msg{
+	color:red;
+	font-weight:normal;
+}
+.img-preview{
+	max-height:200px;
+	width:auto;
+	margin-top:10px;
+}
+.progress {
+    display: inline-block;
+    width: 200px;
+    border: 1px groove #CCC;
+    border-radius:5px;
+}
+.progress div {
+    font-size: smaller;
+    background: #2d5279;
+    width: 0;
+    border-radius:5px;
+    color:#fff;
+    text-align:center;
+}
+
+/*Retrieve page*/
+.custom-table{
+	border-collapse: collapse;
+	text-align:left;
+	width:500px;
+}
+.custom-table td{
+	padding:5px 10px;
+	min-width:100px;
+}
+.custom-table tr{
+	border-bottom:1px solid #ccc;
+}
+.custom-table tr:hover{
+	background-color:#f1f1f1;
+}
+.custom-table thead tr:first-child{
+	background-color:#739bc5 !important;
+	font-weight:bold;
+	text-transform:uppercase;
+}
+.people-photo{
+	height:100px;
+	width:100px;
+}
+
+
+/*ANIMATIONS*/
+
+/* The starting CSS styles for the enter animation */
+div.main-view.ng-enter {
+	transition:0.5s linear all;
+	opacity:0;
+}
+
+/* The finishing CSS styles for the enter animation */
+div.main-view.ng-enter.ng-enter-active {
+	opacity:1;
+}

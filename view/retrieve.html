@@ -1,0 +1,31 @@
+<h1>Retrieve</h1>
+<br>
+<div ng-controller="retCtrl">
+	<input type="text" name="txtfind" ng-model="find" placeholder="Search here...">
+	<br><br>
+	<table class="custom-table">
+		<thead>
+			<tr>
+				<td ng-click="orderBy('id')">Id</td>
+				<td ng-click="orderBy('firstname')">First Name</td>
+				<td ng-click="orderBy('lastname')">Last Name</td>
+				<td ng-click="orderBy('email')">E-mail</td>
+				<td>Photo</td>
+				<td>Functions</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="x in names | filter: find | orderBy: myOrderBy">
+				<td>{{ x.id }}</td>
+				<td>{{ x.firstname }}</td>
+				<td>{{ x.lastname }}</td>
+				<td>{{ x.email }}</td>
+				<td><img class="people-photo" ng-src="{{ x.photo }}"></td>
+				<td>
+					<button class="btn btn-sm btn-primary" type="button" update-record>Update</button>
+					<button class="btn btn-sm btn-danger" type="button" delete-record>Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

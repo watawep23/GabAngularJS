@@ -1,0 +1,31 @@
+<h1>Create new Person</h1>
+<br>												  <!--novalid is to disable default browser validation-->
+<form class="person-form" name="personForm" ng-controller="personCtrl" novalidate>
+	<label>
+		<input type="text" name="pFirstName" ng-model="person.firstname" placeholder="First name" autocomplete="off" required>
+		<span class="error-msg" ng-show="personForm.pFirstName.$touched && personForm.pFirstName.$invalid">First name is required.</span>
+	</label>
+	<label>
+		<input type="text" name="pLastName" ng-model="person.lastname" placeholder="Last name" autocomplete="off" required>
+		<span class="error-msg" ng-show="personForm.pLastName.$touched && personForm.pLastName.$invalid">Last name is required.</span>
+	</label>
+	<label>
+		<input type="email" name="pEmail" ng-model="person.email" placeholder="E-mail" autocomplete="off" required>
+		<span class="error-msg" ng-show="personForm.pEmail.$touched && personForm.pEmail.$invalid">Put a valid e-mail address.</span>
+	</label>
+
+	<input type="file" ngf-select ng-model="photoFile" name="photoFile" accept="image/*" ngf-max-size="2MB" ngf-model-invalid="errorFile" required>
+	<span class="error-msg" ng-show="personForm.photoFile.$error.required">*required</span><br>
+    <span class="error-msg" ng-show="personForm.photoFile.$error.maxSize">File too large {{errorFile.size / 1000000|number:1}}MB: max 2M</span>
+    <img ng-show="personForm.photoFile.$valid" ngf-thumbnail="photoFile" class="img-preview"> <button type="button" ng-click="photoFile = null" ng-show="photoFile">Remove</button>
+    <br>
+    <span class="progress" ng-show="photoFile.progress >= 0">
+	    <div style="width:{{photoFile.progress}}%" ng-bind="photoFile.progress + '%'"></div>
+	</span>
+    <br>
+    <br>
+	<input type="submit" value="Create" 
+		ng-disabled="personForm.pFirstName.$invalid || personForm.pLastName.$invalid || personForm.pEmail.$invalid || personForm.photoFile.$invalid"
+		ng-click="submitPerson(photoFile)">
+	<p>{{status.response}}</p>
+</form>
